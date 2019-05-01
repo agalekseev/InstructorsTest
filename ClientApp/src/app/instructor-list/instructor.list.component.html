@@ -1,0 +1,25 @@
+<table class="full-width-table">
+  <thead class="table-header">
+    <tr>
+      <td width="33%" class="header-cell">First Name</td>
+      <td width="33%" class="header-cell">Last Name</td>
+      <td width="33%" class="header-cell">Delete</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+        *ngFor="let instructor of instructorList; index as i"
+        [attr.data-index]="i"
+        (click)="InstructorSelected(instructor)"
+        [ngClass]="{'alternating-row': i % 2, 'selected-row': currentInstructor && instructor?.id === currentInstructor?.id}"
+        >
+      <td>{{ instructor.firstName }}</td>
+      <td>{{ instructor.lastName }}</td>
+      <td align="center">
+        <input *ngIf="!isLoading" class="red-button" type="button" value="DELETE" (click)="InstructorDeleted(instructor, $event)" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<input *ngIf="currentInstructor" class="red-button" style="margin-top:5px;" type="button" value="Clear Selection" (click)="InstructorSelected(null)"  />
+

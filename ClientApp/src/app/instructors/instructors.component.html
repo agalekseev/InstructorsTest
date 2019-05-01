@@ -1,0 +1,10 @@
+<div class="canvas">
+  <h1 class="header-label">Add/Edit Instructor</h1>
+  <instructor-list-component [isLoading]="isLoading" [instructorList]="instructors" (instructorSelected)="onInstructorSelected($event)" (instructorDeleted)="onInstructorDeleted($event)"></instructor-list-component>
+
+  <br />
+  <br />
+
+  <h1 class="header-label">Instructor details</h1>
+  <instructor-edit-component [isLoading]="isLoading" [instructor]="currentInstructor" (instructorSaved)="onInstructorSaved($event)"></instructor-edit-component>
+</div>

@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+
+.canvas {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.header-label {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.table-header {
+  height: 50px;
+  background-color: rgb(204,204,204);
+  text-align: left;
+}
+
+.header-cell {
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.full-width-table {
+  border: 1px solid black;
+  width: 100%;
+  text-align: left;
+}
+
+  .full-width-table td {
+    height: 45px;
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+  .full-width-table tr {
+    height: 10px;
+  }
+
+    .full-width-table tr.alternating-row {
+      background-color: rgb(236, 236, 236);
+    }
+
+    .full-width-table tr.selected-row {
+      background-color: #daafaf;
+    }
+
+
+.red-button {
+  background-color: rgb(217, 83, 79);
+  border-radius: 5px;
+  border-color: rgb(217, 83, 79);
+  color: white;
+  height: 36px;
+  width: 180px;
+  font-weight: bold;
+}
+
+.edit-save-button {
+  background-color: rgb(91, 192, 222);
+  border-radius: 5px;
+  border-color: rgb(91, 192, 222);
+  color: white;
+  height: 36px;
+  width: 180px;
+  font-weight: bold;
+}
+
+.edit-save-button:disabled{
+  opacity:0.5
+}
+  .student-input {
+  width: 98%;
+}
+
+.error-message{
+  color:red;
+}

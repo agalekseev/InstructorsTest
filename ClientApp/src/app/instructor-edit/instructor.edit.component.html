@@ -1,0 +1,47 @@
+<form #editForm="ngForm" novalidate>
+  <table style="width:100%">
+    <thead>
+      <tr>
+        <td width="33%" class="header-cell">First Name</td>
+        <td width="33%" class="header-cell">Middle Name</td>
+        <td width="33%" class="header-cell">Last Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input name="firstName" required maxlength="255" placeholder="First Name of student" class="student-input" type="text" #firstName="ngModel" [ngModel]="instructor?.firstName" /></td>
+        <td><input required maxlength="255" placeholder="Middle Name of student" class="student-input" type="text" /></td>
+        <td>
+          <input name="lastName" required maxlength="255" placeholder="Last Name of student" type="text" class="student-input" #lastName="ngModel" [ngModel]="instructor?.lastName" />
+          <input name="idValue" type="hidden" #idValue="ngModel" [ngModel]="instructor?.id"/>
+        </td>
+      </tr>
+    </tbody>
+    <tr style="text-align:left" text-align:left>
+      <td>
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+             class="error-message">
+          First Name is required and 255 char max
+        </div>
+      </td>
+      <td></td>
+      <td>
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+             class="error-message">
+          Last Name is required and 255 char max
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <input *ngIf="!isLoading"
+               [disabled]="!editForm.valid"
+               class="edit-save-button"
+               style="margin-top:10px;"
+               type="button"
+               value="Add/Save"
+               (click)="AddUpdateInstructor(editForm)" />
+      </td>
+    </tr>
+  </table>
+</form>
